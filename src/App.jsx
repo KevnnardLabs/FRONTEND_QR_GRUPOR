@@ -19,79 +19,79 @@ const Alert = forwardRef(function Alert(props, ref) {
 
 function App() {
 
-  const currencies = [
-    {
-      value: "Fox Concept Store Plaza central",
-      label: "Fox Concept Store Plaza central",
-    },
-    {
-      value: "Fox Concept Store Toberin",
-      label: "Fox Concept Store Toberin",
-    },
-    {
-      value: "Fox Concept Store Online",
-      label: "Fox Concept Store Online",
-    },
-    {
-      value: "Fox Concept Store Neiva",
-      label: "Fox Concept Store Neiva",
-    },
-  ];
-
   // const currencies = [
   //   {
-  //     value: "REPLAYS NUESTRO BOGOTÁ",
-  //     label: "REPLAYS NUESTRO BOGOTÁ",
+  //     value: "Fox Concept Store Plaza central",
+  //     label: "Fox Concept Store Plaza central",
   //   },
   //   {
-  //     value: "REPLAYS MULTIPLAZA",
-  //     label: "REPLAYS MULTIPLAZA",
+  //     value: "Fox Concept Store Toberin",
+  //     label: "Fox Concept Store Toberin",
   //   },
   //   {
-  //     value: "REPLAYS EDEN",
-  //     label: "REPLAYS EDEN",
+  //     value: "Fox Concept Store Online",
+  //     label: "Fox Concept Store Online",
   //   },
   //   {
-  //     value: "REPLAYS VILLA DEL RIO",
-  //     label: "REPLAYS VILLA DEL RIO",
-  //   },
-  //   {
-  //     value: "REPLAYS CALIMA",
-  //     label: "REPLAYS CALIMA",
-  //   },
-  //   {
-  //     value: "REPLAYS AMERICAS 1",
-  //     label: "REPLAYS AMERICAS 1",
-  //   },
-  //   {
-  //     value: "REPLAYS AMERICAS 3",
-  //     label: "REPLAYS AMERICAS 3",
-  //   },
-  //   {
-  //     value: "REPLAYS AMERICAS 5",
-  //     label: "REPLAYS AMERICAS 5",
-  //   },
-  //   {
-  //     value: "REPLAYS AMERICAS 6",
-  //     label: "REPLAYS AMERICAS 6",
-  //   },
-  //   {
-  //     value: "REPLAYS AMERICAS 11 OUTLET",
-  //     label: "REPLAYS AMERICAS 11 OUTLET",
-  //   },
-  //   {
-  //     value: "REPLAYS PLAZA CENTRAL 2",
-  //     label: "REPLAYS PLAZA CENTRAL 2",
-  //   },
-  //   {
-  //     value: "REPLAYS ANTARES",
-  //     label: "REPLAYS ANTARES",
-  //   },
-  //   {
-  //     value: "REPLAYS NEIVA",
-  //     label: "REPLAYS NEIVA",
+  //     value: "Fox Concept Store Neiva",
+  //     label: "Fox Concept Store Neiva",
   //   },
   // ];
+
+  const currencies = [
+    {
+      value: "REPLAYS NUESTRO BOGOTÁ",
+      label: "REPLAYS NUESTRO BOGOTÁ",
+    },
+    {
+      value: "REPLAYS MULTIPLAZA",
+      label: "REPLAYS MULTIPLAZA",
+    },
+    {
+      value: "REPLAYS EDEN",
+      label: "REPLAYS EDEN",
+    },
+    {
+      value: "REPLAYS VILLA DEL RIO",
+      label: "REPLAYS VILLA DEL RIO",
+    },
+    {
+      value: "REPLAYS CALIMA",
+      label: "REPLAYS CALIMA",
+    },
+    {
+      value: "REPLAYS AMERICAS 1",
+      label: "REPLAYS AMERICAS 1",
+    },
+    {
+      value: "REPLAYS AMERICAS 3",
+      label: "REPLAYS AMERICAS 3",
+    },
+    {
+      value: "REPLAYS AMERICAS 5",
+      label: "REPLAYS AMERICAS 5",
+    },
+    {
+      value: "REPLAYS AMERICAS 6",
+      label: "REPLAYS AMERICAS 6",
+    },
+    {
+      value: "REPLAYS AMERICAS 11 OUTLET",
+      label: "REPLAYS AMERICAS 11 OUTLET",
+    },
+    {
+      value: "REPLAYS PLAZA CENTRAL 2",
+      label: "REPLAYS PLAZA CENTRAL 2",
+    },
+    {
+      value: "REPLAYS ANTARES",
+      label: "REPLAYS ANTARES",
+    },
+    {
+      value: "REPLAYS NEIVA",
+      label: "REPLAYS NEIVA",
+    },
+  ];
   // estados
   const [cedula, setCedula] = useState("");
   const [nombre, setNombre] = useState("");
@@ -129,7 +129,7 @@ function App() {
         setAceptar(false);
         handleClick();
         setTimeout(() => {
-         window.location.replace("https://foxracing.com.co");
+         window.location.replace("https://replays.com.co");
         }, 3000);
       }
     } catch (error) {
@@ -285,7 +285,7 @@ function App() {
           </form>
         </div>
         <div className="img">
-          <img src="/img/ima_Blanco.png" alt="" />
+          <img src="/img/gruporB.png.png" alt="" />
         </div>
         <a
           style={{
@@ -296,7 +296,7 @@ function App() {
             color: "#fff",
             textTransform: "uppercase",
           }}
-          href="https://www.foxconceptstore.com/policies/terms-of-service"
+          href="https://replays.com.co/policies/terms-of-service"
           target="_blank"
         >
           <small>ver terminos y condiciones</small>
