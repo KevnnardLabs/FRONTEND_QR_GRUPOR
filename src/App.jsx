@@ -19,83 +19,87 @@ const Alert = forwardRef(function Alert(props, ref) {
 
 function App() {
 
-  // const currencies = [
-  //   {
-  //     value: "Fox Concept Store Plaza central",
-  //     label: "Fox Concept Store Plaza central",
-  //   },
-  //   {
-  //     value: "Fox Concept Store Toberin",
-  //     label: "Fox Concept Store Toberin",
-  //   },
-  //   {
-  //     value: "Fox Concept Store Online",
-  //     label: "Fox Concept Store Online",
-  //   },
-  //   {
-  //     value: "Fox Concept Store Neiva",
-  //     label: "Fox Concept Store Neiva",
-  //   },
-  // ];
-
   const currencies = [
     {
-      value: "REPLAYS NUESTRO BOGOTÁ",
-      label: "REPLAYS NUESTRO BOGOTÁ",
+      value: "Fox Concept Store Plaza central",
+      label: "Fox Concept Store Plaza central",
     },
     {
-      value: "REPLAYS MULTIPLAZA",
-      label: "REPLAYS MULTIPLAZA",
+      value: "Fox Concept Store Toberin",
+      label: "Fox Concept Store Toberin",
     },
     {
-      value: "REPLAYS EDEN",
-      label: "REPLAYS EDEN",
+      value: "Fox Concept Store Online",
+      label: "Fox Concept Store Online",
     },
     {
-      value: "REPLAYS VILLA DEL RIO",
-      label: "REPLAYS VILLA DEL RIO",
-    },
-    {
-      value: "REPLAYS CALIMA",
-      label: "REPLAYS CALIMA",
-    },
-    {
-      value: "REPLAYS AMERICAS 1",
-      label: "REPLAYS AMERICAS 1",
-    },
-    {
-      value: "REPLAYS AMERICAS 3",
-      label: "REPLAYS AMERICAS 3",
-    },
-    {
-      value: "REPLAYS AMERICAS 5",
-      label: "REPLAYS AMERICAS 5",
-    },
-    {
-      value: "REPLAYS AMERICAS 6",
-      label: "REPLAYS AMERICAS 6",
-    },
-    {
-      value: "REPLAYS AMERICAS 11 OUTLET",
-      label: "REPLAYS AMERICAS 11 OUTLET",
-    },
-    {
-      value: "REPLAYS PLAZA CENTRAL 2",
-      label: "REPLAYS PLAZA CENTRAL 2",
-    },
-    {
-      value: "REPLAYS ANTARES",
-      label: "REPLAYS ANTARES",
-    },
-    {
-      value: "REPLAYS NEIVA",
-      label: "REPLAYS NEIVA",
+      value: "Fox Concept Store Neiva",
+      label: "Fox Concept Store Neiva",
     },
   ];
+
+  // const currencies = [
+  //   {
+  //     value: "REPLAYS NUESTRO BOGOTÁ",
+  //     label: "REPLAYS NUESTRO BOGOTÁ",
+  //   },
+  //   {
+  //     value: "REPLAYS MULTIPLAZA",
+  //     label: "REPLAYS MULTIPLAZA",
+  //   },
+  //   {
+  //     value: "REPLAYS EDEN",
+  //     label: "REPLAYS EDEN",
+  //   },
+  //   {
+  //     value: "REPLAYS VILLA DEL RIO",
+  //     label: "REPLAYS VILLA DEL RIO",
+  //   },
+  //   {
+  //     value: "REPLAYS CALIMA",
+  //     label: "REPLAYS CALIMA",
+  //   },
+  //   {
+  //     value: "REPLAYS AMERICAS 1",
+  //     label: "REPLAYS AMERICAS 1",
+  //   },
+  //   {
+  //     value: "REPLAYS AMERICAS 3",
+  //     label: "REPLAYS AMERICAS 3",
+  //   },
+  //   {
+  //     value: "REPLAYS AMERICAS 5",
+  //     label: "REPLAYS AMERICAS 5",
+  //   },
+  //   {
+  //     value: "REPLAYS AMERICAS 6",
+  //     label: "REPLAYS AMERICAS 6",
+  //   },
+  //   {
+  //     value: "REPLAYS AMERICAS 11 OUTLET",
+  //     label: "REPLAYS AMERICAS 11 OUTLET",
+  //   },
+  //   {
+  //     value: "REPLAYS PLAZA CENTRAL 2",
+  //     label: "REPLAYS PLAZA CENTRAL 2",
+  //   },
+  //   {
+  //     value: "REPLAYS ANTARES",
+  //     label: "REPLAYS ANTARES",
+  //   },
+  //   {
+  //     value: "REPLAYS NEIVA",
+  //     label: "REPLAYS NEIVA",
+  //   },
+  // ];
   // estados
-  const [email, setEmail] = useState("");
+  const [cedula, setCedula] = useState("");
   const [nombre, setNombre] = useState("");
   const [telefono, setTelefono] = useState("");
+  const [email, setEmail] = useState("");
+  const [direccion, setDireccion] = useState("");
+  const [ciudad, setCiudad] = useState("");
+  const [fechaCumple, setFechaCumple] = useState("");
   const [tienda, setTienda] = useState("");
   const [aceptar, setAceptar] = useState(false);
 
@@ -116,7 +120,7 @@ function App() {
       } else {
         const { data } = await axios.post(
           `${import.meta.env.VITE_BACKEND_URL}/clienteTerminos`,
-          { email, nombre, telefono, tienda, aceptar }
+          { cedula, nombre, telefono, email, direccion, ciudad, fechaCumple, tienda }
         );
         setEmail("");
         setNombre("");
@@ -124,9 +128,8 @@ function App() {
         setTienda("");
         setAceptar(false);
         handleClick();
-
         setTimeout(() => {
-         window.location.replace("https://replays.com.co");
+         window.location.replace("https://foxracing.com.co");
         }, 3000);
       }
     } catch (error) {
@@ -172,13 +175,13 @@ function App() {
               autoComplete="on"
             >
               <TextField
-                label="Correo electronico"
+                label="Cedula"
                 required
-                type="email"
+                type="text"
                 variant="outlined"
                 id="validation-outlined-input"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={cedula}
+                onChange={(e) => setCedula(e.target.value)}
               />
               <TextField
                 label="Nombre Completo"
@@ -198,9 +201,45 @@ function App() {
                 onChange={(e) => setTelefono(e.target.value)}
               />
               <TextField
+                label="Correo electronico"
+                required
+                type="email"
+                variant="outlined"
+                id="validation-outlined-input"
+                value={email}
+                onChange={(e) => setEmail(e.target.value.toLowerCase())}
+              />
+              <TextField
+                label="Direccion"
+                variant="outlined"
+                required
+                id="validation-outlined-input"
+                value={direccion}
+                onChange={(e) => setDireccion(e.target.value)}
+              />
+              <TextField
+                label="Ciudad"
+                variant="outlined"
+                required
+                id="validation-outlined-input"
+                value={ciudad}
+                onChange={(e) => setCiudad(e.target.value)}
+              />
+              <TextField
+                helperText="Fecha Cumpleaños"
+                defaultValue={Date.now()}
+                variant="outlined"
+                required
+                type="date"
+                id="validation-outlined-input"
+                value={fechaCumple}
+                onChange={(e) => setFechaCumple(e.target.value)}
+              />
+              <TextField
                 label="Tienda desde donde aceptas"
                 select
                 required
+                focused
                 variant="outlined"
                 id="validation-outlined-input"
                 sx={{ borderColor: "#fff" }}
@@ -239,25 +278,25 @@ function App() {
                   endIcon={<SendIcon />}
                   onClick={handleEnviarFirma}
                 >
-                  Send
+                  Enviar
                 </Button>
               )}
             </Stack>
           </form>
         </div>
         <div className="img">
-          <img src="/img/gruporB.png" alt="" />
+          <img src="/img/ima_Blanco.png" alt="" />
         </div>
         <a
           style={{
-            position: "absolute",
-            bottom: ".3rem",
-            right: 0,
-            left: 0,
+            position: "relative",
+            display: "flex",
+            bottom: "-3rem",
+            justifyContent: "center",
             color: "#fff",
-            textAlign: "center",
+            textTransform: "uppercase",
           }}
-          href="https://replays.com.co/policies/terms-of-service"
+          href="https://www.foxconceptstore.com/policies/terms-of-service"
           target="_blank"
         >
           <small>ver terminos y condiciones</small>
