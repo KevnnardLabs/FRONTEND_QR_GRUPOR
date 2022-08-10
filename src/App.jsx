@@ -285,7 +285,7 @@ function App() {
           </form>
         </div>
         <div className="img">
-          <img src="/img/gruporB.png.png" alt="" />
+          <img src="/img/gruporB.png" alt="" />
         </div>
         <a
           style={{
